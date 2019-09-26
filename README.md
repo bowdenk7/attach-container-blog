@@ -5,7 +5,7 @@ However in this post, we'll take a look at how you can use the Remote Containers
 
 ## Pre-reqs
 If you want to follow along, you'll need:
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) running on your machine as well as a co
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) running on your machine
 - a containerized application to debug - if you don't have one, you can try [this sample](https://github.com/bowdenk7/attach-container-blog)
 - the [Remote Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
