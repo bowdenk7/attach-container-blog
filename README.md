@@ -25,7 +25,8 @@ and you should be able to navigate to `localhost:3001` and see the following:
 We can now use the Remote Containers extension to attach to our running container.
 Use the command palette (cmd + shift + p <replace with cool docs thing>) and search for the `Remote Containers: Attach to running container` command.
 
-You will then be shown a list of your running containers, select the one we just started.
+You will then be shown a list of your running containers.
+Select the one we just started.
 
 ![attach command](images/attach-command.png)
 
@@ -37,7 +38,7 @@ VS Code is installing a copy of the VS Code server inside the container where yo
 We then connect from your local VS Code to the remote VS Code server.
 The result is you have your local copy of VS Code with all your settings, themes, and keybindings, but it's running inside the container with your application.
 
-This becomes clear if you open the terminal and poke around a bit
+This becomes clear if you open the terminal and poke around a bit:
 ```
 root@335f8ad8b16d:~# whoami
 root
@@ -50,7 +51,7 @@ Dockerfile  bin  node_modules  package.json  routes  app.js  docker-compose.yaml
 ```
 
 At this point you can do anything that you can do in a normal local VS Code context. 
-You can edit files, start and stop processes, check on setup and configuration, or whatever you need to do build your app.
+You can edit files, start and stop processes, check on setup and configuration, or whatever you need to work on your app.
 Let's go ahead and open our app by clicking the "Open Folder" button and navigating to `/usr/src/app`.
 
 ## Debugging
@@ -58,7 +59,7 @@ Let's go ahead and open our app by clicking the "Open Folder" button and navigat
 To further show how similar the remote container is to a local environment, let's attach a debugger.
 Our Node process is still running, so let's go back to the command palette and select `Debug: Attach to Node Process`.
 
-There will probably be several Node processes running, but select the one that is shows `bin/www`.
+There will probably be several Node processes running, but select the one that shows `bin/www`.
 
 ![attach to process](images/attach.png)
 
@@ -68,7 +69,7 @@ Open `index.js` and drop a breakpoint on line 6:
 res.render('index', { title: 'Express' });
 ```
 
-Then navigate to `localhost:3001` in your browser and see the breakpoint get hit as expected!
+Then navigate to `localhost:3001` in your browser and see the breakpoint trigger as expected!
 
 ![we hit the breakpoint](images/breakpoint.png)
 
@@ -77,7 +78,7 @@ Then navigate to `localhost:3001` in your browser and see the breakpoint get hit
 So you've seen how powerful it can be to work in VS Code running in the container, but currently every time we attach we have to reopen our project folder.
 `devcontainer.json` is a config file that allows us to tell VS Code how to initiate the remote session, so we can use it to make sure our project folder is always open when we attach.
 
-You can generate a `devcontainer.json` by running **Remote-Containers: Create Container Configuration File...** from the command palette.
+You can generate a `devcontainer.json` by running `Remote-Containers: Create Container Configuration File...` from the command palette.
 
 ![create container command](images/generate.png)
 
@@ -97,7 +98,7 @@ devcontainer.json:
 }
 ```
 
-Now when you attach VS Code to your running container, you won't have to reopen your project folder.
+Now when you attach VS Code to your running container, you won't have to reopen your project folder each time.
 
 ## Next Steps
 
