@@ -10,7 +10,7 @@ If you want to follow along, you'll need:
 - the [Remote Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 ## Project Setup/Run
-To run get the dependencies and run the sample project, all you have to do is run:
+To get the dependencies and run the sample project, all you have to do is run:
 ```
 docker-compose up
 ```
